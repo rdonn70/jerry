@@ -3,7 +3,7 @@ import time
 import pygame
 
 #Needs to run: python3 -m pip install git+https://github.com/openai/whisper.git soundfile.
-#May switch to PocketSphinx depending on overhead
+#May need to switch to PocketSphinx depending on overhead
 
 pygame.mixer.init()
 
@@ -35,8 +35,6 @@ while(True):
             
             if(phrase in seinfeld):
                 playsound("seinfeld.mp3")
-            else:
-                pass
             
         except:
             pass
