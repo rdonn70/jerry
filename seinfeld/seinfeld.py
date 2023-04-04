@@ -2,6 +2,9 @@ import speech_recognition as sr
 import time
 import pygame
 
+#Needs to run: python3 -m pip install git+https://github.com/openai/whisper.git soundfile.
+#May need to switch to PocketSphinx depending on overhead
+
 pygame.mixer.init()
 
 def playsound(file):
@@ -28,15 +31,12 @@ while(True):
         audio = r.listen(source, phrase_time_limit=1)
         
         try:
-            phrase = r.recognize_google(audio).lower()
+            phrase = r.recognize_whisper(audio, language="english").lower()
             
             if(phrase in seinfeld):
                 playsound("seinfeld.mp3")
-            else:
-                pass
             
         except:
             pass
 
         time.sleep(1)
-    
