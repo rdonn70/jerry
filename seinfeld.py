@@ -31,7 +31,7 @@ while(True):
         audio = r.listen(source, phrase_time_limit=1)
         
         try:
-            phrase = r.recognize_whisper(audio).lower()
+            phrase = r.recognize_whisper(audio, language="english").lower()
             
             if(phrase in seinfeld):
                 playsound("seinfeld.mp3")
